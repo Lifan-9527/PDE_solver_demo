@@ -3,18 +3,22 @@
 #ifndef unsighned int
 #define unsigned int uint
 
-
-class freqChan {
+namespace frequency {
+class waveChan {
 	private:
-		int channel;
-		int direction;
+		int chanID;
+		int direction;	// -1:invalid, 0:negative, 1:positive.
+		double waveLen;
+		double freq;
 	public:
-		freqChan* left;
-		freqChan* right;
+		waveChan* left;
+		waveChan* right;
 		
 	public:
-		freqChan();
+		waveChan();
+		waveChan(int chanID, int direction, double waveLen, double freq);
 		
-		void addLeft(freqChan leftMember);
-		void addRight(freqChan rightMember);
+		void setLeft(waveChan* memberPtr);
+		void setRight(waveChan* memberPtr);
+}
 }
