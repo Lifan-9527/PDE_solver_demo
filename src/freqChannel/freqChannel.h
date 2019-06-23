@@ -20,5 +20,5 @@ class waveChan {
 		
 		void setLeft(waveChan* memberPtr);
 		void setRight(waveChan* memberPtr);
-}
+};
 }
