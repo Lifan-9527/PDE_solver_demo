@@ -27,7 +27,7 @@ public:
 	realMap();
 	tensor map_value;
 private:
-	vec map_valueNum;
+	vec gridNum;
 	int real_map_id;
 
 public:
