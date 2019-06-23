@@ -31,24 +31,32 @@ rawMap::Set(const vec upBorder, const vec downBorder){
 
 
 
-realMap::realMap(int dim, vec gridNum) {
-	if(dim!=gridNum.size()){
-		::std::cout << "the dimension setting is not matched with the gridNum." << ::std::endl;
+realMap::realMap(int dim, vec map_valueNum) {
+	if(dim!=map_valueNum.size()){
+		::std::cout << "the dimension setting is not matched with the map_valueNum." << ::std::endl;
 	exit(-1);
 	}
 	this.dim = dim;
-	this.gridNum = gridNum;
-	gridNum
+	this.map_valueNum = map_valueNum;
 }
 
 
-realMap::Mesh() {
-	for (int i=0; i<gridNum.size(); i++) {
-		grid[i] = vec(gridNum[i]);
-		for (int j=0; j<gridNum[i]; j++) {
-			grid[i][j] = this.upBorder;	
+realMap::MeshGrid() {
+	for (int i=0; i<map_valueNum.size(); i++) {
+		map_value[i] = vec(map_valueNum[i]);
+		for (int j=0; j<map_valueNum[i]; j++) {
+			map_value[i][j] = this.upBorder;	
 		}
 	}
 }
+
+realMap::Padding(rawMap region, double value) {
+
+}
+
+
+
+
+
 
 }

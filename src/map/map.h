@@ -25,14 +25,15 @@ private:
 class realMap : public rawMap {
 public:
 	realMap();
-	tensor grid;
+	tensor map_value;
 private:
-	vec gridNum;
+	vec map_valueNum;
 	int real_map_id;
 
 public:
 	// Mesh generates map in a a 0-multi dimension space.
-	Mesh();
+	MeshGrid();
+	Padding();
 }
 
 }
