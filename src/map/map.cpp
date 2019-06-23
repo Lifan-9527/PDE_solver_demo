@@ -30,4 +30,25 @@ rawMap::Set(const vec upBorder, const vec downBorder){
 }
 
 
+
+realMap::realMap(int dim, vec gridNum) {
+	if(dim!=gridNum.size()){
+		::std::cout << "the dimension setting is not matched with the gridNum." << ::std::endl;
+	exit(-1);
+	}
+	this.dim = dim;
+	this.gridNum = gridNum;
+	gridNum
+}
+
+
+realMap::Mesh() {
+	for (int i=0; i<gridNum.size(); i++) {
+		grid[i] = vec(gridNum[i]);
+		for (int j=0; j<gridNum[i]; j++) {
+			grid[i][j] = this.upBorder;	
+		}
+	}
+}
+
 }

@@ -18,8 +18,7 @@ public:
 
 	void Set(vec upBorder, vec downBorder);
 private:
-	int mapID;
-	
+	int raw_map_id;
 
 };
 
@@ -28,9 +27,11 @@ public:
 	realMap();
 	tensor grid;
 private:
-	int gridNum;
+	vec gridNum;
+	int real_map_id;
 
 public:
+	// Mesh generates map in a a 0-multi dimension space.
 	Mesh();
 }
 
