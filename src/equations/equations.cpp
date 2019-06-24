@@ -56,6 +56,7 @@ Equations::LoadConfig(const std::string path) {
 	            this.dim = atoi(value);
 	        case "coefficient":
                     this.coef = StringToVec(value);
+		/*
 	        case "order_t":
                     this.order_t = StringToTensor(value);
 	        case "order_x":
@@ -64,6 +65,7 @@ Equations::LoadConfig(const std::string path) {
                     this.init_t = StringToTensor(value);
 	        case "init_x":
 	            this.init_x = StringToTensor(value);
+		*/
 
 	        }
 	    }
