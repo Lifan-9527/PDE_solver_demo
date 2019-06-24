@@ -39,36 +39,34 @@ Equations::LoadConfig(const std::string path) {
     if(fd.is_open()) {
         while(!fd.eof()) {
 
-        std::getline(fd, line);
-	int is_annot = line.find("%")
-	int pos = line.find("=");
-	if (pos>0 && pos<line.length()-1 && is_annot<0) {
-	    key = line.substr(0, pos);
-	    value = line.substr(pos+1, line.length())
+            std::getline(fd, line);
+	    int is_annot = line.find("%")
+	    int pos = line.find("=");
+	    if (pos>0 && pos<line.length()-1 && is_annot<0) {
+	        key = line.substr(0, pos);
+	        value = line.substr(pos+1, line.length())
 
-	    switch key {
+	        switch key {
 
-            case "dim":
-	        this.dim = atoi(value);
-            case "eID":
-	        this.dim = atoi(value);
-	    case "eqtNum":
-	        this.dim = atoi(value);
-	    case "coefficient":
-                this.coef = StringToVec(value);
-	    case "order_t":
-                this.order_t = StringToTensor(value);
-	    case "order_x":
-                this.order_x = StringToTensor(value);
-	    case "init_t":
-                this.init_t = StringToTensor(value);
-	    case "init_x":
-	        this.init_x = StringToTensor(value);
+                case "dim":
+	            this.dim = atoi(value);
+                case "eID":
+	            this.dim = atoi(value);
+	        case "eqtNum":
+	            this.dim = atoi(value);
+	        case "coefficient":
+                    this.coef = StringToVec(value);
+	        case "order_t":
+                    this.order_t = StringToTensor(value);
+	        case "order_x":
+                    this.order_x = StringToTensor(value);
+	        case "init_t":
+                    this.init_t = StringToTensor(value);
+	        case "init_x":
+	            this.init_x = StringToTensor(value);
 
-
-
+	        }
 	    }
-	}
         }
 
     }

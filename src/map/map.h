@@ -4,8 +4,6 @@
 #include <vector>
 
 namespace map {
-using vec = ::std::vector<double>;
-using tensor = ::std::vector<vec>;
 
 class rawMap {
 public:
