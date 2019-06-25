@@ -34,4 +34,16 @@ class Equations {
 }
 
 
+class solver {
+    public:
+        solver();
+
+    public:
+        map::realMap propagate(Equations & e, map::realMap & input);
+
+
+
+}
+
+
 }

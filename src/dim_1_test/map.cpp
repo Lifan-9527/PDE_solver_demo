@@ -42,12 +42,12 @@ realMap::realMap(int dim, vec gridNum) {
 
 
 realMap::MeshGrid() {
-	for (int i=0; i<gridNum.size(); i++) {
-		map_value[i] = vec(gridNum[i]);
-		for (int j=0; j<gridNum[i]; j++) {
-			map_value[i][j] = this.upBorder;	
-		}
+    for (int i=0; i<gridNum.size(); i++) {
+        map_value[i] = vec(gridNum[i]);
+	for (int j=0; j<gridNum[i]; j++) {
+	    map_value[i][j] = this.upBorder;	
 	}
+    }
 }
 
 realMap::Padding(rawMap region, double value) {
