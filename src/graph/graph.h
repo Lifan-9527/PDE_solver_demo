@@ -31,10 +31,6 @@ class Line {
 	
 }
 
-Line propagate ( const Line & fibre, const Equation & eq ) {
-
-
-
 
 }
 
