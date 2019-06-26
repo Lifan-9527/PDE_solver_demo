@@ -2,8 +2,8 @@
 #define _FORMULAR_H
 
 #include "utility.h"
-#include "point.h"
 #include <vector>
+#include <complex>
 
 namespace fml {
 
@@ -15,22 +15,34 @@ class Formular {
     public:
         int highest_order; 
         int dim;
-	std::vector< std::complex<double> > init_t;
-	std::vector< std::vector<std::complex<double>> > init_z;
 
         std::vector< std::vector<std::complex<double>> > coef;
 	std::vector<int> order;
     public:
         Formular();
 	Formular(int dim, int highest_order);
-
 	LoadConfig(std::string path)
-
-        propagate();
-
 	Print();
-
-	Check();	// Check if the configuration is sufficient to compute.
 }
+
+
+class Equations {
+    public:
+        int eqNum;
+	int varNum;
+	int highest_order;
+	std::vector<Formular> equations;
+	bool solvable;
+    public:
+        Equations();
+	Equations(Formular f, ...);
+	Init();
+	bool Check();
+	Print();
+    public:
+	std::vector< std::complex<double> > init_t;
+	std::vector< std::vector<std::complex<double>> > init_z;
+}
+
 
 }

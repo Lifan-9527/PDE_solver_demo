@@ -1,4 +1,5 @@
 #include "formular.h"
+#include <cstdarg>
 
 namespace fml {
 
@@ -60,10 +61,27 @@ Formular::LoadConfig (const std::string path) {
 	    }
 	}
     }
+}
 
 
+Equations::Equations(){
+    this.eqNum = 0;
+    this.varNum = 0;
+    this.highest_order = -1;
+    this.solvable = false;
+}
+Equations::Equations(Formular f, ...){
 
 }
 
+
+Equations::Init(){
+}
+
+Equations::Check(){
+}
+
+Equations::Print(){
+}
 
 }
