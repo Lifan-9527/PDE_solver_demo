@@ -1,2 +1,2 @@
 # PDE_solver_demo
-![Image text](./format.PNG)
+![Image text](/src/format.PNG)
