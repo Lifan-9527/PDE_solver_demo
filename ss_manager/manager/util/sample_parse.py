@@ -21,7 +21,7 @@ class sample(object):
 		self.authen = bool(sp_line[2])
 		self.serverIP = sp_line[3]
 		self.serverPort = sp_line[4]
-		self.passwd = sp_line[5]
+		self.passwd = sp_line[5].strip('\n')
 	
 	def check(self):
 		assert isinstance(self.uuid, int), "The uuid (1st element) is not integer."

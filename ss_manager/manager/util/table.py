@@ -13,8 +13,7 @@ class table(object):
 		if(len(self.ctx)==0): return
 		for i in range(len(self.ctx)):
 			line = self.ctx[i].toString()
-				f.write(line)
-				f.write(line)
+			f.write(line+'\n')
 		f.close()
 
 	def append_tofile(self, filename):
@@ -31,7 +30,6 @@ class table(object):
 	def get_ctx_fromfile(self, filename):
 		f = open(filename, 'r+')
 		for line in f:
-			print(line)
 			s = sample()
 			s.parse_from_string(line)
 			self.ctx.append(s)
@@ -42,15 +40,19 @@ class table(object):
 		print("total accounts: ", self.num)
 		for x in self.ctx:
 			print("uuid: {}, name: {}, authen: {}, serverIP: {}, serverPort: {}, passwd: {}".format(x.uuid, x.name, x.authen, x.serverIP, x.serverPort, x.passwd))
-			
+		print("\n")		
 	def get_uuid_list(self):
 		uuids = []
 		for x in self.ctx:
 			uuids.append(x.uuid)
 		return uuids
 
-	def lookup(self, s):
-		pass
+	def lookup(self, ids):
+		target = []
+		for x in self.ctx:
+			if(x.uuid in ids):
+				target.append(x)
+		return target
 	
 	def insert(self, s):
 		pass
